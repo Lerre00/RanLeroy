@@ -7,8 +7,19 @@ import java.util.Collections;
 
 public class Logic{
     JFrame jfr = new JFrame();
-    //TODO split add pieces into multiple methods, if possible.
+
+    protected void restartGame(JButton button, JPanel panel, JButton[] buttons, JButton emptyButton, JPanel base){
+
+        button.addActionListener(e -> {
+            addPieces(panel, buttons, emptyButton);
+            panel.remove(buttons[15]);
+            panel.updateUI();
+        });
+
+    }
+
     protected void addPieces(JPanel panel, JButton[] buttons, JButton emptyButton){
+
         ArrayList<Integer> list = new ArrayList<>();
 
         for (int i=1; i<=16; i++) { //Randomizes numbers from 1-15
@@ -28,6 +39,7 @@ public class Logic{
             }
 
         }
+
 
     }
 

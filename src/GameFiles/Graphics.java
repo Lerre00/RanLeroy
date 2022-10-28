@@ -21,11 +21,14 @@ public class Graphics extends JFrame {
             southPanel.setLayout(new GridLayout(4,4));
             northPanel.add(newGame);
 
-
             logic.addPieces(southPanel,numButtons,emptyButton);
             add(basePanel);
+
             basePanel.add(northPanel, BorderLayout.NORTH);
             basePanel.add(southPanel);
+
+            logic.restartGame(newGame, southPanel, numButtons, emptyButton, basePanel);
+
             setSize(500,500);
             setLocation(100,100);
             setVisible(true);
