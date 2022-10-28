@@ -1,5 +1,4 @@
 package GameFiles;
 
-public class Main {
-
+public class Pieces {
 }
