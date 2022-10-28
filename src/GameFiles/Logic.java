@@ -8,11 +8,11 @@ import java.util.Collections;
 public class Logic{
     JFrame jfr = new JFrame();
 
-    protected void restartGame(JButton button, JPanel panel, JButton[] buttons, JButton emptyButton, JPanel base){
+    protected void restartGame(JButton button, JPanel panel, JButton[] buttons, JButton emptyButton){
 
         button.addActionListener(e -> {
+            panel.removeAll();
             addPieces(panel, buttons, emptyButton);
-            panel.remove(buttons[15]);
             panel.updateUI();
         });
 
