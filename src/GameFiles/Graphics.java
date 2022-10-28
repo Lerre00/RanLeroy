@@ -1,4 +1,9 @@
 package GameFiles;
 
-public class Graphics {
+import javax.swing.*;
+
+public class Graphics extends JFrame {
+
+
+
 }
