@@ -21,7 +21,6 @@ public class Graphics extends JFrame {
                 for (int j = 0; j < 4; j++) {
                     if (i!=3 || j!=3) {
                         button[i][j] = new JButton();
-                        System.out.println(i + " " + j);
                         button[i][j].setBackground(Color.PINK);
                         southPanel.add(button[i][j]);
                     }
