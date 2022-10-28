@@ -2,15 +2,17 @@ package GameFiles;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Random;
 
 public class Graphics extends JFrame {
 
+    Random r = new Random();
     JPanel basePanel = new JPanel();
     JPanel northPanel = new JPanel();
     JPanel southPanel = new JPanel();
     JButton newGame = new JButton("Nytt Spel");
     JButton[][] button = new JButton[4][4];
-    JButton emptyButton = new JButton();
+    JButton emptyButton = new JButton("Empty");
 
         Graphics(){
             basePanel.setLayout(new BorderLayout());
@@ -21,7 +23,7 @@ public class Graphics extends JFrame {
                 for (int j = 0; j < 4; j++) {
                     if (i!=3 || j!=3) {
                         button[i][j] = new JButton();
-                        button[i][j].setBackground(Color.PINK);
+                        button[i][j].setBackground(Color.getHSBColor(r.nextFloat(),r.nextFloat(),r.nextFloat()));
                         southPanel.add(button[i][j]);
                     }
                     else {
@@ -30,7 +32,6 @@ public class Graphics extends JFrame {
                     }
                 }
             }
-
             add(basePanel);
             basePanel.add(northPanel, BorderLayout.NORTH);
             basePanel.add(southPanel);

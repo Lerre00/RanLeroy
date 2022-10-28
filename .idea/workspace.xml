@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d56d3c19-3171-4019-b662-eaeb68006cdd" name="Changes" comment="added graphical components + for loop to make buttons">
+    <list default="true" id="d56d3c19-3171-4019-b662-eaeb68006cdd" name="Changes" comment="removed test code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameFiles/Graphics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameFiles/Graphics.java" afterDir="false" />
     </list>
@@ -108,7 +108,21 @@
       <option name="project" value="LOCAL" />
       <updated>1666949259383</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added loop to make 15 buttons">
+      <created>1666950537779</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1666950537779</updated>
+    </task>
+    <task id="LOCAL-00007" summary="removed test code">
+      <created>1666950561605</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1666950561605</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +145,8 @@
     <MESSAGE value="added pieces class code" />
     <MESSAGE value="added main code and graphics JFrame import" />
     <MESSAGE value="added graphical components + for loop to make buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="added graphical components + for loop to make buttons" />
+    <MESSAGE value="added loop to make 15 buttons" />
+    <MESSAGE value="removed test code" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed test code" />
   </component>
 </project>
