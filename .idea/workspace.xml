@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d56d3c19-3171-4019-b662-eaeb68006cdd" name="Changes" comment="added main code and graphics JFrame import">
+    <list default="true" id="d56d3c19-3171-4019-b662-eaeb68006cdd" name="Changes" comment="added graphical components + for loop to make buttons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameFiles/Graphics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameFiles/Graphics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameFiles/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameFiles/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666947550065</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added graphical components + for loop to make buttons">
+      <created>1666949259383</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1666949259383</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,6 +130,7 @@
     <MESSAGE value="added files" />
     <MESSAGE value="added pieces class code" />
     <MESSAGE value="added main code and graphics JFrame import" />
-    <option name="LAST_COMMIT_MESSAGE" value="added main code and graphics JFrame import" />
+    <MESSAGE value="added graphical components + for loop to make buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="added graphical components + for loop to make buttons" />
   </component>
 </project>

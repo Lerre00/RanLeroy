@@ -14,17 +14,29 @@ public class Graphics extends JFrame {
 
         Graphics(){
             basePanel.setLayout(new BorderLayout());
-            //northPanel.add(newGame);
             southPanel.setLayout(new GridLayout(4,4));
+            northPanel.add(newGame);
+
             for (int i = 0; i < 4; i++) {
                 for (int j = 0; j < 4; j++) {
-                    button[i][j] = new JButton();
-                    southPanel.add(button[i][j]);
+                    if (i!=3 || j!=3) {
+                        button[i][j] = new JButton();
+                        System.out.println(i + " " + j);
+                        button[i][j].setBackground(Color.PINK);
+                        southPanel.add(button[i][j]);
+                    }
+                    else {
+                        emptyButton.setBackground(Color.WHITE);
+                        southPanel.add(emptyButton);
+                    }
                 }
             }
-            //pack();
+
+            add(basePanel);
+            basePanel.add(northPanel, BorderLayout.NORTH);
+            basePanel.add(southPanel);
             setSize(500,500);
-            setLocation(600, 300);
+            setLocation(100,100);
             setVisible(true);
             setDefaultCloseOperation(EXIT_ON_CLOSE);
         }
