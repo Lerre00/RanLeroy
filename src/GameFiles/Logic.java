@@ -7,7 +7,7 @@ import java.util.Collections;
 
 public class Logic{
     JFrame jfr = new JFrame();
-
+    //TODO split add pieces into multiple methods, if possible.
     protected void addPieces(JPanel panel, JButton[] buttons, JButton emptyButton){
         ArrayList<Integer> list = new ArrayList<>();
 
