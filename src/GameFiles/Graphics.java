@@ -27,7 +27,7 @@ public class Graphics extends JFrame {
             basePanel.add(northPanel, BorderLayout.NORTH);
             basePanel.add(southPanel);
 
-            logic.restartGame(newGame, southPanel, numButtons, emptyButton, basePanel);
+            logic.restartGame(newGame, southPanel, numButtons, emptyButton);
 
             setSize(500,500);
             setLocation(100,100);
