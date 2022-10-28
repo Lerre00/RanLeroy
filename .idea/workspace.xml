@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d56d3c19-3171-4019-b662-eaeb68006cdd" name="Changes" comment="added main code and graphics JFrame import">
-      <change beforePath="$PROJECT_DIR$/src/GameFiles/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameFiles/Main.java" afterDir="false" />
+    <list default="true" id="d56d3c19-3171-4019-b662-eaeb68006cdd" name="Changes" comment="added development branch">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameFiles/Logic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameFiles/Logic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +18,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Development" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -45,7 +51,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666946965756</updated>
-      <workItem from="1666946967084" duration="619000" />
+      <workItem from="1666946967084" duration="2108000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1666947100835</created>
@@ -75,7 +81,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666947550065</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added development branch">
+      <created>1666947695738</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1666947695738</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,6 +110,7 @@
     <MESSAGE value="added files" />
     <MESSAGE value="added pieces class code" />
     <MESSAGE value="added main code and graphics JFrame import" />
-    <option name="LAST_COMMIT_MESSAGE" value="added main code and graphics JFrame import" />
+    <MESSAGE value="added development branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="added development branch" />
   </component>
 </project>
