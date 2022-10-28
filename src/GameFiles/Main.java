@@ -4,7 +4,7 @@ public class Main {
 
     Main(){
 
-
+        Graphics g = new Graphics();
 
     }
 
