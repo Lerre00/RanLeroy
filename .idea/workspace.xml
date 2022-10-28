@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d56d3c19-3171-4019-b662-eaeb68006cdd" name="Changes" comment="added main code and graphics JFrame import">
+    <list default="true" id="d56d3c19-3171-4019-b662-eaeb68006cdd" name="Changes" comment="fixed code for buttons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameFiles/Graphics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameFiles/Graphics.java" afterDir="false" />
     </list>
@@ -43,7 +43,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GameFiles.Main" />
       <module name="BrickGame" />
@@ -57,9 +57,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main" />
+      <module name="BrickGame" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.main" />
       </list>
     </recent_temporary>
   </component>
@@ -122,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666950561605</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fixed code for buttons">
+      <created>1666953201554</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1666953201554</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +162,7 @@
     <MESSAGE value="added graphical components + for loop to make buttons" />
     <MESSAGE value="added loop to make 15 buttons" />
     <MESSAGE value="removed test code" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed test code" />
+    <MESSAGE value="fixed code for buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed code for buttons" />
   </component>
 </project>
