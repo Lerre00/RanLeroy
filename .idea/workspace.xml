@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d56d3c19-3171-4019-b662-eaeb68006cdd" name="Changes" comment="added development branch">
+    <list default="true" id="d56d3c19-3171-4019-b662-eaeb68006cdd" name="Changes" comment="fixed code for buttons">
+      <change afterPath="$PROJECT_DIR$/src/GameFiles/Transfer to logic plan" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_10_2022_11_57__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_10_2022_11_57__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameFiles/Graphics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameFiles/Graphics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameFiles/Logic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameFiles/Logic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Development" />
+        <entry key="$PROJECT_DIR$" value="Graphics" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,13 +39,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GameFiles.Main" />
+      <module name="BrickGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="GameFiles.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main" />
+      <module name="BrickGame" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -51,7 +82,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666946965756</updated>
-      <workItem from="1666946967084" duration="2108000" />
+      <workItem from="1666946967084" duration="619000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1666947100835</created>
@@ -81,14 +112,35 @@
       <option name="project" value="LOCAL" />
       <updated>1666947550065</updated>
     </task>
-    <task id="LOCAL-00005" summary="added development branch">
-      <created>1666947695738</created>
+    <task id="LOCAL-00005" summary="added graphical components + for loop to make buttons">
+      <created>1666949259383</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1666947695738</updated>
+      <updated>1666949259383</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added loop to make 15 buttons">
+      <created>1666950537779</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1666950537779</updated>
+    </task>
+    <task id="LOCAL-00007" summary="removed test code">
+      <created>1666950561605</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1666950561605</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fixed code for buttons">
+      <created>1666953201554</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1666953201554</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,7 +162,10 @@
     <MESSAGE value="added files" />
     <MESSAGE value="added pieces class code" />
     <MESSAGE value="added main code and graphics JFrame import" />
-    <MESSAGE value="added development branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="added development branch" />
+    <MESSAGE value="added graphical components + for loop to make buttons" />
+    <MESSAGE value="added loop to make 15 buttons" />
+    <MESSAGE value="removed test code" />
+    <MESSAGE value="fixed code for buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed code for buttons" />
   </component>
 </project>
