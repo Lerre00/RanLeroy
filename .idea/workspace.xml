@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d56d3c19-3171-4019-b662-eaeb68006cdd" name="Changes" comment="added movement, and background swap">
-      <change afterPath="$PROJECT_DIR$/src/GameFiles/What to do" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameFiles/Graphics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameFiles/Graphics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameFiles/Logic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameFiles/Logic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
