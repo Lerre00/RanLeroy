@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d56d3c19-3171-4019-b662-eaeb68006cdd" name="Changes" comment="added restart method in logic (done frfr)">
+    <list default="true" id="d56d3c19-3171-4019-b662-eaeb68006cdd" name="Changes" comment="added movement, and background swap">
       <change afterPath="$PROJECT_DIR$/src/GameFiles/What to do" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_10_2022_13_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_10_2022_13_54__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_10_2022_14_00__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_10_2022_14_00__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_10_2022_14_01__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_10_2022_14_01__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameFiles/Graphics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameFiles/Graphics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameFiles/Logic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameFiles/Logic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameFiles/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameFiles/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameFiles/Transfer to logic plan" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666961601965</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added movement, and background swap">
+      <created>1667228720867</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1667228720867</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +198,7 @@
     <MESSAGE value="added restart method in logic (not done)" />
     <MESSAGE value="added restart method in logic (done)" />
     <MESSAGE value="added restart method in logic (done frfr)" />
-    <option name="LAST_COMMIT_MESSAGE" value="added restart method in logic (done frfr)" />
+    <MESSAGE value="added movement, and background swap" />
+    <option name="LAST_COMMIT_MESSAGE" value="added movement, and background swap" />
   </component>
 </project>
