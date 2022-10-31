@@ -12,17 +12,32 @@ public class Logic {
 
     protected void startGame(JPanel southPanel,JButton[] buttons){
         addPieces(southPanel,buttons);
-        int clickNr = 1;
 
-        for (int i = 0; i < 16; i++) {
+        for (int i = 0; i <= 15; i++) {
                 final int finalI = i;
                 int clickedButton;
                 int left = i -1;
                 int right = i +1;
                 int up = i -4;
                 int down = i+4;
+                final int finalLeft;
+                final int finalRight;
+                final int finalUp;
+                final int finalDown;
+
+                if (left < 0){left = 0;}
+                if (right > 16){right = 15;}
+                if (up < 0){up = 0;}
+                if (down > 15){down = 15;}
+
+                finalLeft = left;
+                finalRight = right;
+                finalUp = up;
+                finalDown = down;
+
                 if(buttons[i].getText() == ""){
                 }
+
 
                 else {
                      clickedButton = i;
@@ -32,31 +47,37 @@ public class Logic {
                     buttons[clickedButton].addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                            if(buttons[left].getText() == ""){
-                                buttons[left].setBackground(Color.CYAN);
+                            if(buttons[finalLeft].getText() == ""){
+                                buttons[finalLeft].setBackground(Color.CYAN);
                                 buttons[clickedButton].setBackground(Color.WHITE);
-                                buttons[left].setText(buttons[clickedButton].getText());
+                                buttons[finalLeft].setText(buttons[clickedButton].getText());
                                 buttons[clickedButton].setText("");
                             }
-                            else if(buttons[right].getText() == ""){
-                                buttons[right].setBackground(Color.CYAN);
+                            else if(buttons[finalRight].getText() == ""){
+                                buttons[finalRight].setBackground(Color.CYAN);
                                 buttons[clickedButton].setBackground(Color.WHITE);
-                                buttons[right].setText(buttons[clickedButton].getText());
+                                buttons[finalRight].setText(buttons[clickedButton].getText());
                                 buttons[clickedButton].setText("");
                             }
-                            else if(buttons[up].getText() == ""){
-                                buttons[up].setBackground(Color.CYAN);
+                            else if(buttons[finalUp].getText() == ""){
+                                buttons[finalUp].setBackground(Color.CYAN);
                                 buttons[clickedButton].setBackground(Color.WHITE);
-                                buttons[up].setText(buttons[clickedButton].getText());
+                                buttons[finalUp].setText(buttons[clickedButton].getText());
                                 buttons[clickedButton].setText("");
                             }
-                            else if(buttons[down].getText() == ""){
-                                buttons[down].setBackground(Color.CYAN);
+                            else if(buttons[finalDown].getText() == ""){
+                                buttons[finalDown].setBackground(Color.CYAN);
                                 buttons[clickedButton].setBackground(Color.WHITE);
-                                buttons[down].setText(buttons[clickedButton].getText());
+                                buttons[finalDown].setText(buttons[clickedButton].getText());
                                 buttons[clickedButton].setText("");
                             }
-                            else{}
+                            else{
+                                System.out.println("----------------------------------------");
+                                System.out.println("Final up:" + finalUp);
+                                System.out.println("Final down:" + finalDown);
+                                System.out.println("Final left:" + finalLeft);
+                                System.out.println("Final right:" + finalRight);
+                            }
 
 
 
