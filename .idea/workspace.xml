@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d56d3c19-3171-4019-b662-eaeb68006cdd" name="Changes" comment="Bug fixed and cleaned up code, ready for merging">
+    <list default="true" id="d56d3c19-3171-4019-b662-eaeb68006cdd" name="Changes" comment="fixed all movement bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameFiles/Graphics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameFiles/Graphics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameFiles/Logic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameFiles/Logic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Logic" />
+        <entry key="$PROJECT_DIR$" value="Graphics" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,13 +37,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/leroy/IdeaProjects/BrickGame"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GameFiles.Main" />
@@ -66,8 +68,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.main" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.main" />
       </list>
@@ -82,6 +82,10 @@
       <option name="presentableId" value="Default" />
       <updated>1666946965756</updated>
       <workItem from="1666946967084" duration="619000" />
+      <workItem from="1666993444107" duration="378000" />
+      <workItem from="1667050780293" duration="3411000" />
+      <workItem from="1667222231097" duration="380000" />
+      <workItem from="1667387079545" duration="2466000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1666947100835</created>
@@ -139,7 +143,42 @@
       <option name="project" value="LOCAL" />
       <updated>1666953201554</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added restart method in logic (not done)">
+      <created>1666961242833</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1666961242833</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added restart method in logic (done)">
+      <created>1666961550167</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1666961550167</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added restart method in logic (done frfr)">
+      <created>1666961601965</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1666961601965</updated>
+    </task>
+    <task id="LOCAL-00012" summary="added movement, and background swap">
+      <created>1667228720867</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1667228720867</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fixed all movement bugs">
+      <created>1667233536524</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1667233536524</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +204,11 @@
     <MESSAGE value="added loop to make 15 buttons" />
     <MESSAGE value="removed test code" />
     <MESSAGE value="fixed code for buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed code for buttons" />
+    <MESSAGE value="added restart method in logic (not done)" />
+    <MESSAGE value="added restart method in logic (done)" />
+    <MESSAGE value="added restart method in logic (done frfr)" />
+    <MESSAGE value="added movement, and background swap" />
+    <MESSAGE value="fixed all movement bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed all movement bugs" />
   </component>
 </project>

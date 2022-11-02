@@ -1,0 +1,171 @@
+Index: src/GameFiles/Graphics.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package GameFiles;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.util.ArrayList;\r\nimport java.util.Collections;\r\nimport java.util.Random;\r\n\r\npublic class Graphics extends JFrame {\r\n    Logic logic = new Logic();\r\n    Random r = new Random();\r\n    JPanel basePanel = new JPanel();\r\n    JPanel northPanel = new JPanel();\r\n    JPanel southPanel = new JPanel();\r\n    JButton newGame = new JButton(\"Nytt Spel\");\r\n    JButton[] numButtons= new JButton[16];\r\n    JButton emptyButton = new JButton(\"Empty\");\r\n\r\n        Graphics(){\r\n            basePanel.setLayout(new BorderLayout());\r\n            southPanel.setLayout(new GridLayout(4,4));\r\n            northPanel.add(newGame);\r\n\r\n            logic.addPieces(southPanel,numButtons,emptyButton);\r\n            add(basePanel);\r\n\r\n            basePanel.add(northPanel, BorderLayout.NORTH);\r\n            basePanel.add(southPanel);\r\n\r\n            logic.restartGame(newGame, southPanel, numButtons, emptyButton);\r\n\r\n            setSize(500,500);\r\n            setLocation(100,100);\r\n            setVisible(true);\r\n            setDefaultCloseOperation(EXIT_ON_CLOSE);\r\n        }\r\n\r\n\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/GameFiles/Graphics.java b/src/GameFiles/Graphics.java
+--- a/src/GameFiles/Graphics.java	(revision e4b5a00becfff7080cd05d291313383f76ff05a9)
++++ b/src/GameFiles/Graphics.java	(date 1667226367232)
+@@ -24,6 +24,9 @@
+             logic.addPieces(southPanel,numButtons,emptyButton);
+             add(basePanel);
+ 
++            //logic.startGame(southPanel,numButtons,emptyButton);
++            add(basePanel);
++
+             basePanel.add(northPanel, BorderLayout.NORTH);
+             basePanel.add(southPanel);
+ 
+Index: src/GameFiles/Logic.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package GameFiles;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\nimport java.util.ArrayList;\r\nimport java.util.Collections;\r\n\r\npublic class Logic {\r\n    JFrame jfr = new JFrame();\r\n\r\n    protected void restartGame(JButton button, JPanel panel, JButton[] buttons, JButton emptyButton){\r\n\r\n        button.addActionListener(e -> {\r\n            panel.removeAll();\r\n            addPieces(panel, buttons, emptyButton);\r\n            panel.updateUI();\r\n        });\r\n\r\n    }\r\n\r\n    protected void addPieces(JPanel panel, JButton[] buttons, JButton emptyButton){\r\n\r\n        ArrayList<Integer> list = new ArrayList<>();\r\n        ArrayList<JButton> buttonArr = new ArrayList<>();\r\n\r\n        for (int i=1; i<=16; i++) { //Randomizes numbers from 1-15\r\n            list.add(i);\r\n        }\r\n\r\n        Collections.shuffle(list);\r\n\r\n        for (int i = 0; i <=15; i++) {\r\n            if(list.get(i) != 16) {\r\n                buttons[i] = new JButton(\"\" + list.get(i));\r\n                String name = buttons[i].getName();\r\n                panel.add(buttons[i]);\r\n            }\r\n            else{\r\n                emptyButton.setBackground(Color.WHITE);\r\n                panel.add(emptyButton);\r\n            }\r\n            buttonArr.add(buttons[i]);\r\n\r\n        }\r\n\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/GameFiles/Logic.java b/src/GameFiles/Logic.java
+--- a/src/GameFiles/Logic.java	(revision e4b5a00becfff7080cd05d291313383f76ff05a9)
++++ b/src/GameFiles/Logic.java	(date 1667228389038)
+@@ -2,14 +2,41 @@
+ 
+ import javax.swing.*;
+ import java.awt.*;
+-import java.awt.event.ActionEvent;
+-import java.awt.event.ActionListener;
+ import java.util.ArrayList;
+ import java.util.Collections;
+ 
+-public class Logic {
++public class Logic extends JFrame{
++
+     JFrame jfr = new JFrame();
+ 
++    /*protected void startGame(JPanel southPanel,JButton[] buttons, JButton emptyButton ){
++        addPieces(southPanel,buttons,emptyButton);
++        buttons[0].addActionListener(l->{
++            System.out.println("Du har klickat på " + buttons[2].getText());
++        });
++
++    }*/
++
++    /*ActionListener buttonListener = new ActionListener(){
++    public void actionPerformed(ActionEvent e) {
++        JButton selectedBtn = (JButton) e.getSource();
++        String name = selectedBtn.getName();
++        System.out.println(selectedBtn.getAlignmentY());
++        /*if (e.getSource() instanceof JButton) {
++
++            String text = ((JButton) e.getSource()).getText();
++            int id = Integer.getInteger(text);
++
++            /*int leftNeighbour = id - 1;
++            int rightNeighbour = id + 1;
++            int topNeighbour = id - 4;
++            int bottomtNeighbour = id + 4;
++            if(leftNeighbour > 0 && leftNeighbour != id) {
++
++            }
++    }
++    };*/
++
+     protected void restartGame(JButton button, JPanel panel, JButton[] buttons, JButton emptyButton){
+ 
+         button.addActionListener(e -> {
+@@ -20,7 +47,7 @@
+ 
+     }
+ 
+-    protected void addPieces(JPanel panel, JButton[] buttons, JButton emptyButton){
++    public void addPieces(JPanel panel, JButton[] buttons, JButton emptyButton){
+ 
+         ArrayList<Integer> list = new ArrayList<>();
+         ArrayList<JButton> buttonArr = new ArrayList<>();
+@@ -34,13 +61,29 @@
+         for (int i = 0; i <=15; i++) {
+             if(list.get(i) != 16) {
+                 buttons[i] = new JButton("" + list.get(i));
+-                String name = buttons[i].getName();
+                 panel.add(buttons[i]);
++                int finalI = i;
++                int left = finalI - 1;
++                int rightNeighbour = finalI + 1;
++                int topNeighbour = finalI - 4;
++                int bottomtNeighbour = finalI + 4;
++                buttons[i].addActionListener(e -> {
++                    if(buttons[finalI].getName() == ""){
++                        System.out.println("yay");
++                    }
++                    System.out.println(buttons[finalI].getName());
++                   /*buttons[finalI].setText(""+left);
++                   buttons[left].setText(""+finalI);*/
++
++                });
+             }
+             else{
+                 emptyButton.setBackground(Color.WHITE);
++                JButton emptyname = buttons[i];
+                 panel.add(emptyButton);
++
+             }
++
+             buttonArr.add(buttons[i]);
+ 
+         }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"d56d3c19-3171-4019-b662-eaeb68006cdd\" name=\"Changes\" comment=\"added restart method in logic (done frfr)\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/GameFiles/Logic.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/GameFiles/Logic.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"Graphics\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2GkydfrzLjtgsiqBXKXi8mxNlLx\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\" selected=\"Application.Main\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"GameFiles.Main\" />\r\n      <module name=\"BrickGame\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"GameFiles.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"main\" />\r\n      <module name=\"BrickGame\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"d56d3c19-3171-4019-b662-eaeb68006cdd\" name=\"Changes\" comment=\"\" />\r\n      <created>1666946965756</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1666946965756</updated>\r\n      <workItem from=\"1666946967084\" duration=\"619000\" />\r\n      <workItem from=\"1666993444107\" duration=\"378000\" />\r\n      <workItem from=\"1667050780293\" duration=\"3411000\" />\r\n      <workItem from=\"1667222231097\" duration=\"380000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"initial commit\">\r\n      <created>1666947100835</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666947100835</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"added files\">\r\n      <created>1666947274863</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666947274863</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"added pieces class code\">\r\n      <created>1666947397378</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666947397378</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"added main code and graphics JFrame import\">\r\n      <created>1666947550065</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666947550065</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"added graphical components + for loop to make buttons\">\r\n      <created>1666949259383</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666949259383</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"added loop to make 15 buttons\">\r\n      <created>1666950537779</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666950537779</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"removed test code\">\r\n      <created>1666950561605</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666950561605</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"fixed code for buttons\">\r\n      <created>1666953201554</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666953201554</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"added restart method in logic (not done)\">\r\n      <created>1666961242833</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666961242833</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"added restart method in logic (done)\">\r\n      <created>1666961550167</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666961550167</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"added restart method in logic (done frfr)\">\r\n      <created>1666961601965</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666961601965</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"12\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"initial commit\" />\r\n    <MESSAGE value=\"added files\" />\r\n    <MESSAGE value=\"added pieces class code\" />\r\n    <MESSAGE value=\"added main code and graphics JFrame import\" />\r\n    <MESSAGE value=\"added graphical components + for loop to make buttons\" />\r\n    <MESSAGE value=\"added loop to make 15 buttons\" />\r\n    <MESSAGE value=\"removed test code\" />\r\n    <MESSAGE value=\"fixed code for buttons\" />\r\n    <MESSAGE value=\"added restart method in logic (not done)\" />\r\n    <MESSAGE value=\"added restart method in logic (done)\" />\r\n    <MESSAGE value=\"added restart method in logic (done frfr)\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"added restart method in logic (done frfr)\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision e4b5a00becfff7080cd05d291313383f76ff05a9)
++++ b/.idea/workspace.xml	(date 1667228735786)
+@@ -1,8 +1,9 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="d56d3c19-3171-4019-b662-eaeb68006cdd" name="Changes" comment="added restart method in logic (done frfr)">
++    <list default="true" id="d56d3c19-3171-4019-b662-eaeb68006cdd" name="Changes" comment="fresh push">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/GameFiles/Graphics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameFiles/Graphics.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/GameFiles/Logic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameFiles/Logic.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -82,7 +83,7 @@
+       <workItem from="1666946967084" duration="619000" />
+       <workItem from="1666993444107" duration="378000" />
+       <workItem from="1667050780293" duration="3411000" />
+-      <workItem from="1667222231097" duration="380000" />
++      <workItem from="1667222231097" duration="6454000" />
+     </task>
+     <task id="LOCAL-00001" summary="initial commit">
+       <created>1666947100835</created>
+@@ -161,7 +162,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1666961601965</updated>
+     </task>
+-    <option name="localTasksCounter" value="12" />
++    <task id="LOCAL-00012" summary="fresh push">
++      <created>1667222772350</created>
++      <option name="number" value="00012" />
++      <option name="presentableId" value="LOCAL-00012" />
++      <option name="project" value="LOCAL" />
++      <updated>1667222772350</updated>
++    </task>
++    <option name="localTasksCounter" value="13" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -190,6 +198,7 @@
+     <MESSAGE value="added restart method in logic (not done)" />
+     <MESSAGE value="added restart method in logic (done)" />
+     <MESSAGE value="added restart method in logic (done frfr)" />
+-    <option name="LAST_COMMIT_MESSAGE" value="added restart method in logic (done frfr)" />
++    <MESSAGE value="fresh push" />
++    <option name="LAST_COMMIT_MESSAGE" value="fresh push" />
+   </component>
+ </project>
+\ No newline at end of file
