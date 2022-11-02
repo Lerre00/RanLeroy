@@ -103,7 +103,6 @@ public class Logic {
         }
     }
 
-
     protected void restartGame(JButton restartButton, JPanel southPanel, JButton[] buttonArr, JLabel winLabel){
 
         restartButton.addActionListener(e -> {
@@ -124,10 +123,10 @@ public class Logic {
             randomNumList.add(i);
         }
 
-        //Collections.shuffle(randomNumList);
+        Collections.shuffle(randomNumList);
 
         for (int i = 0; i <=15; i++) {
-            if(randomNumList.get(i) != randomNumList.get(15)) {
+            if(randomNumList.get(i) != 16) {
                 buttonArr[i] = new JButton("" + randomNumList.get(i));
                 buttonArr[i].setBackground(Color.CYAN);
                 southPanel.add(buttonArr[i]);
