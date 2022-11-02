@@ -5,22 +5,18 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
-import java.util.Objects;
 
 public class Logic {
-    JFrame jfr = new JFrame();
 
-    protected void startGame(JPanel southPanel,JButton[] buttons){
-
-        addPieces(southPanel,buttons);
+    protected void movePieces(JButton[] buttonArr){
 
         for (int i = 0; i <= 15; i++) {
-            final int finalI = i;
             int clickedButton;
-            int left = i -1;
-            int right = i +1;
-            int up = i -4;
+            int left = i-1;
+            int right = i+1;
+            int up = i-4;
             int down = i+4;
             final int finalLeft;
             final int finalRight;
@@ -47,91 +43,100 @@ public class Logic {
 
             clickedButton = i;
 
-            buttons[i].addActionListener(new ActionListener() {
+            buttonArr[i].addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    if(buttons[finalLeft].getText() == "" && clickedButton != 0 && clickedButton != 4 && clickedButton != 8 && clickedButton != 12){
-                        buttons[finalLeft].setBackground(Color.CYAN);
-                        buttons[clickedButton].setBackground(Color.WHITE);
-                        buttons[finalLeft].setText(buttons[clickedButton].getText());
-                        buttons[clickedButton].setText("");
-                        //System.out.println("Inside left");
+                    if(buttonArr[finalLeft].getText() == "" && clickedButton != 0 && clickedButton != 4 && clickedButton != 8 && clickedButton != 12){
+                        buttonArr[finalLeft].setBackground(Color.CYAN);
+                        buttonArr[clickedButton].setBackground(Color.WHITE);
+                        buttonArr[finalLeft].setText(buttonArr[clickedButton].getText());
+                        buttonArr[clickedButton].setText("");
                     }
-                    else if(buttons[finalRight].getText() == "" && clickedButton != 3 && clickedButton != 7 && clickedButton != 11){
-                        buttons[finalRight].setBackground(Color.CYAN);
-                        buttons[clickedButton].setBackground(Color.WHITE);
-                        buttons[finalRight].setText(buttons[clickedButton].getText());
-                        buttons[clickedButton].setText("");
-                        //System.out.println("Inside right");
+                    else if(buttonArr[finalRight].getText() == "" && clickedButton != 3 && clickedButton != 7 && clickedButton != 11){
+                        buttonArr[finalRight].setBackground(Color.CYAN);
+                        buttonArr[clickedButton].setBackground(Color.WHITE);
+                        buttonArr[finalRight].setText(buttonArr[clickedButton].getText());
+                        buttonArr[clickedButton].setText("");
                     }
-                    else if(buttons[finalUp].getText() == "" && clickedButton != 2 && clickedButton != 3){
-                        buttons[finalUp].setBackground(Color.CYAN);
-                        buttons[clickedButton].setBackground(Color.WHITE);
-                        buttons[finalUp].setText(buttons[clickedButton].getText());
-                        buttons[clickedButton].setText("");
-                        //System.out.println("Inside up");
+                    else if(buttonArr[finalUp].getText() == "" && clickedButton != 2 && clickedButton != 3){
+                        buttonArr[finalUp].setBackground(Color.CYAN);
+                        buttonArr[clickedButton].setBackground(Color.WHITE);
+                        buttonArr[finalUp].setText(buttonArr[clickedButton].getText());
+                        buttonArr[clickedButton].setText("");
                     }
-                    else if(buttons[finalDown].getText() == "" && clickedButton != 12 && clickedButton != 13){
-                        buttons[finalDown].setBackground(Color.CYAN);
-                        buttons[clickedButton].setBackground(Color.WHITE);
-                        buttons[finalDown].setText(buttons[clickedButton].getText());
-                        buttons[clickedButton].setText("");
-                        //System.out.println("Inside down");
+                    else if(buttonArr[finalDown].getText() == "" && clickedButton != 12 && clickedButton != 13){
+                        buttonArr[finalDown].setBackground(Color.CYAN);
+                        buttonArr[clickedButton].setBackground(Color.WHITE);
+                        buttonArr[finalDown].setText(buttonArr[clickedButton].getText());
+                        buttonArr[clickedButton].setText("");
                     }
-                    //System.out.println(clickedButton);
+                }
+            });
+        }
+    }
 
-                    /*System.out.println(buttons[0].getText());
-                    System.out.println(buttons[1].getText());
+    protected void winGame(JButton[] buttonArr, JPanel southPanel, JLabel winLabel) {
 
-                    if(Objects.equals(buttons[0].getText(), "1") && Objects.equals(buttons[1].getText(), "2")){
+        ArrayList<String> numOnButtonsList = new ArrayList<>();
+        ArrayList<String> sortedNumList = new ArrayList<>(Arrays.asList("1", "2", "3", "4",
+                "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", ""));
 
-                        System.out.println("you won");
+        for (int i = 0; i <= 15; i++) {
+            buttonArr[i].addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
 
-                    }*/
+                    for (JButton test : buttonArr) {
+                        String numOnButtons = test.getText();
+                        numOnButtonsList.add(numOnButtons);
+                    }
+                    if(numOnButtonsList.equals(sortedNumList)){
+                        southPanel.removeAll();
+                        southPanel.add(winLabel);
+                        southPanel.updateUI();
+                    }
+                    else{
+                        numOnButtonsList.clear();
+                    }
                 }
             });
         }
     }
 
 
-    protected void restartGame(JButton button, JPanel panel, JButton[] buttons){
+    protected void restartGame(JButton restartButton, JPanel southPanel, JButton[] buttonArr, JLabel winLabel){
 
-        button.addActionListener(e -> {
-            panel.removeAll();
-            startGame(panel, buttons);
-            panel.updateUI();
+        restartButton.addActionListener(e -> {
+            southPanel.removeAll();
+            startGame(southPanel, buttonArr);
+            winGame(buttonArr, southPanel, winLabel);
+            movePieces(buttonArr);
+            southPanel.updateUI();
         });
 
     }
 
-    protected void addPieces(JPanel panel, JButton[] buttons){
+    protected void startGame(JPanel southPanel, JButton[] buttonArr){
 
-        ArrayList<Integer> list = new ArrayList<>();
-        ArrayList<JButton> buttonArr = new ArrayList<>();
+        ArrayList<Integer> randomNumList = new ArrayList<>();
 
-        for (int i=1; i<=16; i++) { //Randomizes numbers from 1-15
-            list.add(i);
+        for (int i=1; i<=16; i++) {
+            randomNumList.add(i);
         }
 
-        Collections.shuffle(list);
+        //Collections.shuffle(randomNumList);
 
         for (int i = 0; i <=15; i++) {
-            if(list.get(i) != 16) {
-                buttons[i] = new JButton("" + list.get(i));
-                buttons[i].setBackground(Color.CYAN);
-                panel.add(buttons[i]);
+            if(randomNumList.get(i) != randomNumList.get(15)) {
+                buttonArr[i] = new JButton("" + randomNumList.get(i));
+                buttonArr[i].setBackground(Color.CYAN);
+                southPanel.add(buttonArr[i]);
             }
             else{
-                buttons[i] = new JButton("");
-                buttons[i].setBackground(Color.WHITE);
-                panel.add(buttons[i]);
+                buttonArr[i] = new JButton("");
+                buttonArr[i].setBackground(Color.WHITE);
+                southPanel.add(buttonArr[i]);
             }
-            buttonArr.add(buttons[i]);
-
         }
-
     }
-
-
-
 }
