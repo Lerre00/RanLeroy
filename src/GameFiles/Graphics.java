@@ -13,7 +13,6 @@ public class Graphics extends JFrame {
     JButton[] buttonArr = new JButton[16];
     JLabel winLabel = new JLabel("You Won!");
 
-
     Graphics(){
         basePanel.setLayout(new BorderLayout());
         southPanel.setLayout(new GridLayout(4,4));
